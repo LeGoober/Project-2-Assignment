@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Meta information -->
     <meta charset="UTF-8" />
     <title>Voter Registration</title>
     
-    <!-- Internal CSS styles -->
     <style>
-        /* Global styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
         }
 
-        /* Container styling */
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -23,20 +19,17 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Headings within container */
         .container h3 {
             margin-top: 0;
             color: #333;
         }
 
-        /* Labels within container */
         .container label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
 
-        /* Input fields, selects, and buttons within container */
         .container input[type="text"],
         .container select,
         .container button {
@@ -48,25 +41,22 @@
             box-sizing: border-box;
         }
 
-        /* Custom styling for select elements */
         .container select {
-            appearance: none;
+            appearance: none; /* Remove default select styles */
             -webkit-appearance: none;
             -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon points="0,2 4,6 8,2"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon points="0,2 4,6 8,2"/></svg>'); /* Add custom arrow */
             background-repeat: no-repeat;
             background-position: right 10px top 50%;
             background-size: 12px;
         }
 
-        /* Styling for radio container */
         .radio-container label {
             display: inline-block;
             margin-right: 20px;
             font-weight: normal;
         }
 
-        /* Submit button */
         #submit-button {
             background-color: #007bff;
             color: #fff;
@@ -76,113 +66,150 @@
             cursor: pointer;
         }
 
-        /* Hover effect for submit button */
         #submit-button:hover {
             background-color: #0056b3;
         }
 
-        /* Navigation Bar Styles */
+        /* Nav Bar Styles */
         .navbar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 85%;
-            width: 100%;
-            height: 70px;
-            background-color: #3c6cda;
-            overflow: hidden;
+            position: fixed; /* Fix navbar at the top of viewport */
+            top: 0; /* Align navbar to the top */
+            right: 0; /* Align navbar to the right */
+            bottom: 85%; /* Set height of the navbar */
+            width: 100%; /* Set full width */
+            height: 70px; /* Set height of the navbar */
+            background-color: #3c6cda; /* Set background color */
+            overflow: hidden; /* Hide overflowing content */
         }
 
-        /* Styling for navbar links */
         .navbar a {
-            float: right;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 20px 20px;
-            text-decoration: none;
+            float: right; /* Align links to the right */
+            display: block; /* Make links block-level elements */
+            color: #f2f2f2; /* Set text color */
+            text-align: center; /* Center text horizontally */
+            padding: 20px 20px; /* Set padding */
+            text-decoration: none; /* Remove default text decoration */
         }
 
-        /* Styling for logo link */
         .navbar a2 {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 20px 20px;
-            text-decoration: none;
+            float: left; /* Align logo to the left */
+            display: block; /* Make logo a block-level element */
+            color: #f2f2f2; /* Set text color */
+            text-align: center; /* Center text horizontally */
+            padding: 20px 20px; /* Set padding */
+            text-decoration: none; /* Remove default text decoration */
         }
 
-        /* Hover effect for navbar links and logo */
-        .navbar a2:hover,
+        .navbar a2:hover {
+            background-color:#627cbb; /* Change background color on hover */
+            color: black; /* Change text color on hover */
+        }
+
         .navbar a:hover {
-            background-color:#627cbb;
-            color: black;
+            background-color:#627cbb; /* Change background color on hover */
+            color: black; /* Change text color on hover */
         }
 
-        /* Adjusting body padding to accommodate fixed navbar */
         body {
-            padding-top: 85px;
+            padding-top: 85px;  /*Adjust the value to match the height of your navigation bar */
         }
 
-        /* Footer styling */
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 150px; /* Adjust the width as needed */
+            margin-right: 50px; /* Add right margin for spacing */
+        }
+
+        h1 {
+            margin: 0 auto;
+        }
+
+        .container input[type="text"],
+        .container input[type="email"],
+        .container select,
+        .container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .container label {
+            color: black; 
+        }
+
+        .container label.required::after {
+            content: "*"; /* Add asterisk as pseudo-element */
+            color: red; /* Set color of asterisk to red */
+        }
+
+        .required {
+            color: red; /* Set color of asterisk to red */
+        }
+
         footer {
-            background-color: #fff;
-            color: #000;
+            
+            background-color: #fff; /* Set your desired background color */
+            color: #000; /* Set your desired text color */
             text-align: center;
             padding: 10px 0;
             bottom: 0;
             width: 100%;
             font-size: 10px;
+        
         }
 
-        /* Styling for footer links */
         footer a {
             color: #000000;
             font-size: 0.5rem;
         }
 
-        /* Styling for footer headings */
         footer h1 {
-            display: inline-block;
-            margin: 0 10px;
+            display: inline-block; /* Display headings as inline-block elements */
+            margin: 0 10px; /* Add some spacing between headings */
         }
 
-        /* Footer container styling */
         .footer-container {
             display: flex;
             justify-content: space-between;
-            width: 80%;
-            margin: 0 auto;
+            width: 80%; /* Set the width of the container */
+            margin: 0 auto; /* Center the container */
         }
 
-        /* Styling for footer sections */
         .section {
             flex: 1;
-            margin-right: 20px;
+            margin-right: 20px; /* Adjust the margin between sections as needed */
+            
         }
 
-        /* Styling for logo container */
         .logo-container {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 20px; /* Adjust the margin as needed */
         }
 
-        /* Styling for logos */
         .logo {
             width: 150px;
         }
 
-        /* Styling for section paragraphs */
         .section p {
-            text-align: justify;
+            text-align: justify; /* Align paragraph text to the left */
         }
+
+
     </style>
 </head>
 <body>
 
-    <!-- Navigation bar -->
     <nav>
         <div class="navbar">
             <a href="#home">Home</a>
@@ -192,32 +219,30 @@
         </div>
     </nav> 
     
-    <!-- Voter registration form -->
     <form action="/action_page.php" method="post">
         <div class="container">
             <h3>Voter details</h3>
 
-            <!-- First name input -->
             <label for="uname" class="required"><b>First name(s)</b></label>
             <input type="text" placeholder="" name="name" required>
 
-            <!-- Surname input -->
             <label for="uname" class="required"><b>Surname</b></label>
             <input type="text" placeholder="" name="name" required>
 
-            <!-- RSA ID number input -->
             <label for="uname" class="required"><b>Valid RSA ID number</b></label>
             <input type="text" placeholder="Enter a 13 digits ID number" name="number" required>
 
-            <!-- Confirm RSA ID number input -->
             <label for="uname" class="required"><b>Confirm ID number</b></label>
             <input type="text" placeholder="Re-enter a 13 digits ID number" name="number" required>
 
-            <!-- Residential address inputs -->
-            <label for="uname"><b>Residential Address</b><span class="required">*</span></label>
+            <label for="uname" ><b>Residential Address</b><span class="required">*</span></label>
+
             <input type="text" placeholder="Line 1" name="addressLine" required>
+
             <input type="text" placeholder="Line 2" name="addressLine" required>
+
             <input type="text" placeholder="City/Town" name="City/Town" required>
+
             <select name="">
                 <option value="" disabled selected hidden>Province</option>
                 <option value="Limpopo">Limpopo</option>
@@ -230,29 +255,31 @@
                 <option value="Eastern Cape">Eastern Cape</option>
                 <option value="North West">North West</option>
             </select>
+            
             <input type="text" placeholder="Postal code" name="code" required>
-
-            <!-- Cell number inputs -->
+           
             <label for="uname" class="required"><b>Cell numbers</b></label>
             <input type="text" placeholder="Enter a 10 digits cell number" name="cell" required>
+
             <label for="uname" class="required"><b>Confirm cell numbers</b></label>
             <input type="text" placeholder="Re-enter a 10 digits cell number" name="cell" required>
-
-            <!-- Email address inputs -->
+            
             <label for="email" class="required"><b>Email Address</b></label>
             <input type="email" placeholder="Enter Email Address" name="Email" required>
+
             <label for="confirmEmail" class="required"><b>Confirm Email Address</b></label>
             <input type="email" id="confirmEmail" placeholder="Re-enter Email Address " name="Email" required>
             <span id="emailMatchMessage" style="color: red;"></span>
 
-            <!-- Demographic information -->
             <h4>Demographic<span class="required">*</span></h4>
             <select name="Demographic*">
                 <option value="" disabled selected hidden>Location</option>
                 <option value="Urban">Urban</option>
                 <option value="Rural">Rural</option>
                 <option value="Township">Township</option>
+                
             </select>
+
             <select name="Race*">
                 <option value="" disabled selected hidden>Race</option>
                 <option value="African">African</option>
@@ -260,6 +287,7 @@
                 <option value="Colored">Colored</option>
                 <option value="Indian">Indian</option>
             </select>
+
             <select name="Home language*">
                 <option value="" disabled selected hidden>Home language</option>
                 <option value="TshiVenda">TshiVenda</option>
@@ -276,59 +304,103 @@
                 <option value="Other">Other</option>
             </select>
 
-            <!-- Gender input -->
             <select name="Gender*">
-                <!-- Placeholder for Gender -->
                 <option value="" disabled selected hidden>Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Prefer not to say">Prefer not to say</option>
                 <option value="Other">Other</option>
             </select>
-
-            <!-- If other, please specify -->
+ 
             <label for="uname" class="required"><b>If other, please specify </b></label>
             <input type="text" placeholder="Gender" name="Name" required>
             <input type="text" placeholder="Language" name="Name" required>
 
-            <!-- Do you have any disabilities -->
             <h5>Do you have any disabilities  <span class="required">*</span></h5>
+
             <div class="radio-container">
                 <label><input type="radio" name="choice" value="yes"> Yes</label>
                 <label><input type="radio" name="choice" value="no"> No</label>
             </div>
 
-            <!-- Confirm -->
             <label class="container" class="required">Confirm<span class="required">*</span>
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
                 <p>I hereby verify and confirm that the information provided is accurate and legitmate and any contradictions can result voting ineligibility</p>
             </label>
 
-            <!-- Submit button -->
             <button type="submit" id="submit-button">Submit</button>
         </div>
+
     </form><br>
 
-    <!-- Footer -->
+    <script>
+        // Get the input elements for ID number, cell number, and email address
+        var idNumber = document.getElementsByName("number")[0];
+        var confirmIdNumber = document.getElementsByName("number")[1];
+        var cellNumber = document.getElementsByName("cell")[0];
+        var confirmCellNumber = document.getElementsByName("cell")[1];
+        var emailAddress = document.getElementsByName("Email")[0];
+        var confirmEmailAddress = document.getElementsByName("Email")[1];
+    
+        // Add event listener to the confirm ID number field
+        confirmIdNumber.addEventListener("input", function() {
+            // Loop through the characters of the confirm ID number
+            for (var i = 0; i < confirmIdNumber.value.length; i++) {
+                // Check if the character in the original ID number at index i is not equal to the character in the confirm ID number at index i
+                if (idNumber.value[i] !== confirmIdNumber.value[i]) {
+                    // If characters don't match, display an alert and break out of the loop
+                    alert("ID numbers do not match. Please re-enter.");
+                    break;
+                }
+            }
+        });
+    
+        // Add event listener to the confirm cell number field
+        confirmCellNumber.addEventListener("input", function() {
+            // Loop through the characters of the confirm cell number
+            for (var i = 0; i < confirmCellNumber.value.length; i++) {
+                // Check if the character in the original cell number at index i is not equal to the character in the confirm cell number at index i
+                if (cellNumber.value[i] !== confirmCellNumber.value[i]) {
+                    // If characters don't match, display an alert and break out of the loop
+                    alert("Cell numbers do not match. Please re-enter.");
+                    break;
+                }
+            }
+        });
+    
+        // Add event listener to the confirm email address field
+        confirmEmailAddress.addEventListener("input", function() {
+            // Loop through the characters of the confirm email address
+            for (var i = 0; i < confirmEmailAddress.value.length; i++) {
+                // Check if the character in the original email address at index i is not equal to the character in the confirm email address at index i
+                if (emailAddress.value[i] !== confirmEmailAddress.value[i]) {
+                    // If characters don't match, display an alert and break out of the loop
+                    alert("Email addresses do not match. Please re-enter.");
+                    break;
+                }
+            }
+        });
+    
+    </script>
+    
+
     <footer>
-        <!-- Footer container -->
+
         <div class="footer-container">
-            <!-- About us section -->
+
             <div class="section">
                 <h1>About us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
             </div>
 
-            <!-- Links section -->
             <div class="section">
                 <h1>Links maybe?</h1><br><br>
                 <a href="" style="font-size: 12px;">Blah </a><br>
                 <a href="" style="font-size: 12px;">Blah blah</a><br>
                 <a href="" style="font-size: 12px;">Blah blah blah</a>
             </div>
-
-            <!-- Contact us section -->
+            
             <div class="section">
                 <h1>Contact us</h1>
                 <p style="font-size: 12px;">FREDJK<br>
@@ -339,16 +411,16 @@
             </div>
         </div><br>
 
-        <!-- Social media logos -->
         <img src="" alt="Social media logo" class="logo">
         <img src="" alt="Social media logo" class="logo">
         <img src="" alt="Social media logo" class="logo">
         <img src="" alt="Social media logo" class="logo">
-
+      
         <br><br>
        
-        <!-- Copyright -->
         <a>&copy; All content FREDJK 2024.</a>
+
     </footer>
+    
 </body>
 </html>
