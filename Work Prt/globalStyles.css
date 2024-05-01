@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.container input[type="text"],
+.container select,
+.container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container select {
+    appearance: none; /* Remove default select styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon points="0,2 4,6 8,2"/></svg>'); /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+}
+
+.radio-container label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+#submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+#submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Nav Bar Styles */
+.navbar {
+    position: fixed; /* Fix navbar at the top of viewport */
+    top: 0; /* Align navbar to the top */
+    right: 0; /* Align navbar to the right */
+    bottom: 85%; /* Set height of the navbar */
+    width: 100%; /* Set full width */
+    height: 70px; /* Set height of the navbar */
+    background-color: #3c6cda; /* Set background color */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.navbar a {
+    float: right; /* Align links to the right */
+    display: block; /* Make links block-level elements */
+    color: #f2f2f2; /* Set text color */
+    text-align: center; /* Center text horizontally */
+    padding: 20px 20px; /* Set padding */
+    text-decoration: none; /* Remove default text decoration */
+}
+
+.navbar a2 {
+    float: left; /* Align logo to the left */
+    display: block; /* Make logo a block-level element */
+    color: #f2f2f2; /* Set text color */
+    text-align: center; /* Center text horizontally */
+    padding: 20px 20px; /* Set padding */
+    text-decoration: none; /* Remove default text decoration */
+}
+
+.navbar a2:hover {
+    background-color:#627cbb; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+.navbar a:hover {
+    background-color:#627cbb; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+body {
+    padding-top: 85px;  /*Adjust the value to match the height of your navigation bar */
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px; /* Adjust the width as needed */
+    margin-right: 50px; /* Add right margin for spacing */
+}
+
+h1 {
+    margin: 0 auto;
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container select,
+.container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container label {
+    color: black; 
+}
+
+.container label.required::after {
+    content: "*"; /* Add asterisk as pseudo-element */
+    color: red; /* Set color of asterisk to red */
+}
+
+.required {
+    color: red; /* Set color of asterisk to red */
+}
+
+footer {
+    
+    background-color: #fff; /* Set your desired background color */
+    color: #000; /* Set your desired text color */
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 10px;
+
+}
+
+footer a {
+    color: #000000;
+    font-size: 0.5rem;
+}
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer h1 {
+    display: inline-block; /* Display headings as inline-block elements */
+    margin: 0 10px; /* Add some spacing between headings */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Set the width of the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.section {
+    flex: 1;
+    margin-right: 20px; /* Adjust the margin between sections as needed */
+    
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.logo {
+    width: 150px;
+}
+
+.section p {
+    text-align: justify; /* Align paragraph text to the left */
+}
