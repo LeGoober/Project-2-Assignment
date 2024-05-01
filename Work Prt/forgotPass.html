@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
     <style>
         /* Global Styles */
         body {
@@ -114,23 +116,55 @@
 
         /* Footer Styles */
         footer {
-            position: absolute; /* Fix footer position at the bottom of viewport */
-            bottom: 0; /* Align footer to the bottom */
-            width: 100%; /* Set full width */
-            height: 70px; /* Set height */
-            background-color: #3c6cda; /* Set background color */
-            overflow: hidden; /* Hide overflowing content */
-            display: flex; /* Use flexbox for layout */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right:  0;
+            z-index: 100;
         }
-        footer h3 {
-            color: #f2f2f2; /* Set text color */
-            text-align: center; /* Center text horizontally */
+
+        footer.footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
         }
+
+        footer.section {
+            flex: 1;
+            text-align: left;
+        }
+
+        footer.logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        footer.logo {
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        footer h1 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
         footer p {
-            color: #f2f2f2; /* Set text color */
-            text-align: center; /* Center text horizontally */
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer a {
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -162,10 +196,41 @@
     </form>
 </div>
 
-<!-- Footer -->
 <footer>
-    <h3></h3><br>
-    <P>&copy; All content FREDJK 2024.</P>
+
+    <div class="footer-container">
+
+        <div class="section">
+            <h1>About us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
+        </div>
+
+        <div class="section">
+            <h1>Links maybe?</h1><br><br>
+            <a href="" style="font-size: 12px;">Blah </a><br>
+            <a href="" style="font-size: 12px;">Blah blah</a><br>
+            <a href="" style="font-size: 12px;">Blah blah blah</a>
+        </div>
+        
+        <div class="section">
+            <h1>Contact us</h1>
+            <p style="font-size: 12px;">FREDJK<br>
+                1001 Observatory Rd, Observatory, South Africa, 7925<br>
+                Cape Town, South Africa<br>
+                enquries@fredjk.com
+            </p>
+        </div>
+    </div><br>
+
+    <img src="" alt="Social media logo" class="logo">
+    <img src="" alt="Social media logo" class="logo">
+    <img src="" alt="Social media logo" class="logo">
+    <img src="" alt="Social media logo" class="logo">
+  
+    <br><br>
+   
+    <a>&copy; All content FREDJK 2024.</a>
+
 </footer>
 
 </body>
