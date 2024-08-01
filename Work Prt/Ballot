@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballots</title>
+    <style>
+        /* Container for the tables to align them side by side */
+        .table-container {
+            display: flex; /* Use Flexbox for layout */
+            justify-content: space-between; /* Space tables evenly */
+            gap: 20px; /* Add space between tables */
+            flex-wrap: wrap; /* Allow tables to wrap if the screen is too small */
+            padding: 20px; /* Add padding around the container */
+        }
+        /* Style for each table */
+        table {
+            width: 100%; /* Make each table full width of its container */
+            border-collapse: collapse; /* Collapse borders */
+        }
+        th, td {
+            border: 1px solid #ddd; /* Light gray border */
+            padding: 8px; /* Space inside cells */
+            text-align: left; /* Align text to the left */
+        }
+        th {
+            background-color: #f2f2f2; /* Light gray background for headers */
+        }
+        .col-large {
+            width: 30%; /* Width for larger columns */
+        }
+        .col-medium {
+            width: 20%; /* Width for medium columns */
+        }
+        .checkbox-column {
+            width: 10%; /* Width for checkbox column */
+        }
+        /* Style to ensure tables are evenly sized within their containers */
+        .table-container table {
+            flex: 1; /* Allow tables to grow and shrink equally */
+            max-width: 33%; /* Ensure each table takes up one-third of the container width */
+        }
+        .submit-container {
+            margin: 20px 0;
+            text-align: center; /* Center align the button */
+        }
+
+        .submit-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Voting Ballots</h1>
+    <h2>Please vote for only 1 choice per ballot</h2>
+
+    <!-- Container holding the tables -->
+    <div class="table-container">
+        <!-- First Table -->
+        <table id="table1">
+            <caption>National elections</caption>
+            <thead>
+                <tr>
+                    <th class="col-large">Party name</th>
+                    <th class="col-medium">Logo</th>
+                    <th class="col-medium">Party code</th>
+                    <th class="checkbox-column">Vote</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Party 1</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 1</td>
+                    <td><input type="checkbox" name="checkbox1"></td>
+                </tr>
+                <tr>
+                    <td>Party 2</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 2</td>
+                    <td><input type="checkbox" name="checkbox2"></td>
+                </tr>
+                <tr>
+                    <td>Party 3</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 3</td>
+                    <td><input type="checkbox" name="checkbox3"></td>
+                </tr>
+                <tr>
+                    <td>Party 4</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 4</td>
+                    <td><input type="checkbox" name="checkbox4"></td>
+                </tr>
+                <tr>
+                    <td>Party 5</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 5</td>
+                    <td><input type="checkbox" name="checkbox5"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Second Table (identical to the first) -->
+        <table id="table2">
+            <caption>Regional elections</caption>
+            <thead>
+                <tr>
+                    <th class="col-large">Party name</th>
+                    <th class="col-medium">Logo</th>
+                    <th class="col-medium">Party code</th>
+                    <th class="checkbox-column">Vote</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Party 1</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 1</td>
+                    <td><input type="checkbox" name="checkbox1"></td>
+                </tr>
+                <tr>
+                    <td>Party 2</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 2</td>
+                    <td><input type="checkbox" name="checkbox2"></td>
+                </tr>
+                <tr>
+                    <td>Party 3</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 3</td>
+                    <td><input type="checkbox" name="checkbox3"></td>
+                </tr>
+                <tr>
+                    <td>Party 4</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 4</td>
+                    <td><input type="checkbox" name="checkbox4"></td>
+                </tr>
+                <tr>
+                    <td>Party 5</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 5</td>
+                    <td><input type="checkbox" name="checkbox5"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Third Table (identical to the first) -->
+        <table id="table3">
+            <caption>Local elections</caption>
+            <thead>
+                <tr>
+                    <th class="col-large">Party name</th>
+                    <th class="col-medium">Logo</th>
+                    <th class="col-medium">Party code</th>
+                    <th class="checkbox-column">Vote</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Party 1</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 1</td>
+                    <td><input type="checkbox" name="checkbox1"></td>
+                </tr>
+                <tr>
+                    <td>Party 2</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 2</td>
+                    <td><input type="checkbox" name="checkbox2"></td>
+                </tr>
+                <tr>
+                    <td>Party 3</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 3</td>
+                    <td><input type="checkbox" name="checkbox3"></td>
+                </tr>
+                <tr>
+                    <td>Party 4</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 4</td>
+                    <td><input type="checkbox" name="checkbox4"></td>
+                </tr>
+                <tr>
+                    <td>Party 5</td>
+                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
+                    <td>PTY 5</td>
+                    <td><input type="checkbox" name="checkbox5"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="submit-container">
+        <button id="submitVote">Submit Vote</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function handleCheckboxClick(event) {
+                const checkboxes = event.target.closest('table').querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    if (checkbox !== event.target) {
+                        checkbox.checked = false;
+                    }
+                });
+            }
+            
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('click', handleCheckboxClick);
+            });
+
+            document.getElementById('submitVote').addEventListener('click', function() {
+                const tables = ['table1', 'table2', 'table3'];
+                let allChecked = true;
+
+                tables.forEach(tableId => {
+                    const table = document.getElementById(tableId);
+                    const checkboxes = table.querySelectorAll('input[type="checkbox"]');
+                    const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+                    
+                    if (!anyChecked) {
+                        allChecked = false;
+                    }
+                });
+
+                if (allChecked) {
+                    // Collect checked options and submit
+                    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+                        console.log(checkbox.name); // Replace with your submit logic
+                    });
+                    alert('All ballots have selected options. Submitting your votes...');
+                    // Here you can add your AJAX call or form submission code
+                } else {
+                    alert('Please select an option in each ballot before submitting.');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
