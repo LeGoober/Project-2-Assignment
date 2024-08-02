@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> YourVote+</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+        <section>
+            <div class="container">
+            <nav>
+                <h1 class="log"><img src="../Final/images/logo.jpg" alt="Logo" class="logo"><h1> YourVote+</h1>
+                    
+                </h1>
+                <ul>
+                    <li><a href = "" class = "active"> Home</a></li>
+                    <li><a href = ""> About</a></li>
+                    <li><a href = ""> Services</a></li>
+                    <li><a href = ""> Projects</a></li>
+                    <li><a href = ""> Contacts</a></li>
+                </ul>
+            </nav>
+            <div class="article">
+                <h1>OKKKKKKKKKKKKKKK</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, fugit!<br> Modi cumque, quidem tenetur ut hic reiciendis fugiat qui quasi illo rerum sit ipsa laboriosam laudantium illum quisquam atque aliquid?</p>
+                <a href="" class="btn">VOTE NOW</a>
+            </div>
+            </div>
+        </section>
+    </body>
+</html>
