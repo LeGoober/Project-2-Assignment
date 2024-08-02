@@ -1,0 +1,37 @@
+THE PROCESS OF CREATING THE ADMINISTRATOR WEBPAGE
+=============================================================
+[OVERVIEW]
+->So in the process of creating the Admin page, it requires me
+to understand the different Use Cases that we're stated for the 
+admin role, so the main uses that this Admin Page needs to 
+provide are:
+    ->Validating the Election System Admins
+    ->Registering Candidates
+    ->Validating Candidates
+    ->Validating Users
+    ->Adding Political Party mainfestoes
+    ->Updating the Voting statistics for analytics
+    ->Publishing the Votes
+    ->Tracking the Votes
+    ->Tracking the Countdown to elections
+
+->So my first step is selecting the format, which is inspired
+by the CPUT sos portal, as it has a layout that is very laid 
+out for adminstative purposes(it allows for the user to select)
+the task they want to perform on the Website through their 
+side task bar, and that will be the same type of layout that I'll
+be using
+
+->A sample website will be based on the W3Schools tutorial on a 
+admin dashboard using HTML, CSS and JavaScript and here's the 
+breakdown of how its going to look and function:
+    ->this program takes into account the layout(i.e. navigation,
+sidebar) and responsiveness of the dashboard.
+    ->in the admin panel, we have multiple sections for controlling
+the admin activities, and we have the following elements:
+    -->header
+    -->navbar
+    -->search bar
+
+-----------------------------------------------------------------
+[STEP 1: WORKING ON THE HTML]

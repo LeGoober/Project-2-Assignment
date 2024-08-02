@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Site</title>
+    <link rel="stylesheet" href="styles_main.css"/>
+    <link rel="stylesheet" href="styles_responsive.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <!--The Header will contain the following elements: Logo, Menu Button, Admin Profile Picture, Search Bar-->
+    <header>
+        <h1>ADMIN DASHBOARD</h1>
+        <div class="logo-section">
+            <div class="logo">ADMIN DASHBOARD</div>
+            <img src="images\burger-menu-svgrepo-com.svg" class="icon menuicon" id="menu_icon" alt="menu icon" width="50px" height="50px">
+        </div>
+
+        <div class="searchbar">
+            <input type="text" placeholder="Search" />
+            <div class="search-button">
+                <image src="images\search-svgrepo-com.svg" alt="seacrh icon" class="icon search-icon" id="search_icon" width="50px" height="50px"/>
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="circle"></div>
+            <img src="images\bell-alt-svgrepo-com.svg" alt="notification bell" class="icon" alt="">
+            <div class="dp">
+                <img src="images\avatar-svgrepo-com.svg" alt="display picture icon" class="display-picture-icon" width="50px" height="50px"/>
+            </div>
+        </div>
+    </header>
+    <!--NAVIGATION PANEL-->
+    <div class="main-container">
+        <div class="nav-container">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <img src="images\dashboard-svgrepo-com.svg" class="navigation-image" alt="dashboard" />
+                    <h3>Dashboard</h3>
+                </div>
+
+                <div class="nav-option option1">
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="navigation-image" alt="articles" width="50px" height="50px"/>
+                    <h3>Articles</h3>
+                </div>
+
+                <div class="nav-option option2">
+                    <img src="images\report-pie-chart-11-svgrepo-com.svg" alt="report image" class="navigation-image" width="50px" height="50px"/>
+                    <h3>Reports</h3>
+                </div>
+                
+                <div class="nav-option option3">
+                    <img src="images\institution-svgrepo-com.svg" alt="institution image" class="navigation-image" width="50px" height="50px" />
+                    <h3>Institutions</h3>
+                </div>
+            
+                <div class="nav-option option4">
+                    <img src="images\profile-round-1346-svgrepo-com.svg" alt="profile image" class="navigation-image" width="50px" height="50px"/>
+                    <h3>Profiles</h3>
+                </div>
+
+                <div class="nav-option option5">
+                    <img src="images\settings-svgrepo-com.svg" alt="settings image" class="navigation-image" width="50px" height="50px">
+                    <h3>Settings</h3>
+                </div>
+
+                <div class="nav-option option6">
+                    <img src="images\logout-2-svgrepo-com.svg" alt="logout image" class="navigation-image" width="50px" height="50px">
+                    <h3>Logout</h3>
+                </div>
+            </nav>
+        </div>
+    <!--MAIN PANEL-->
+        <div class="main">
+            <div class="searchbar2">
+                <input type="text" name="" id="" placeholder="Search">
+                <img src="images\search2-svgrepo-com.svg" class="search-icon" alt="search button"/>
+            </div>
+        </div>
+<!--BOX CONTAINER-->
+        <div class="box-container">
+            <div class="box-box1">
+                <div class="text">
+                    <h2 class="topic-heading">60k</h2>
+                    <h2 class="topic">Article Views</h2>
+                </div>
+                <img src="images\eye-svgrepo-com.svg" alt="Views" width="50px" height="50px"/>
+            </div>
+
+            <div class="box-box2">
+                <div class="text">
+                    <h2 class="topic-heading">256k</h2>
+                    <h2 class="topic">Page Visits</h2>
+                </div>
+                <img src="images\visits-svgrepo-com.svg" alt="Website Visits" width="50px" height="50px"/>
+            </div>
+
+            <div class="box-box3">
+                <div class="text">
+                    <h2 class="topic-heading">342k</h2>
+                    <h2 class="topic">Amount of Votes</h2>
+                </div>
+                <img src="images\vote-svgrepo-com.svg" alt="Votes" width="50px" height="50px"/>
+            </div>
+        </div>
+<!--Administrator Reports Container-->
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-articles">Look at Recent Articles</h1>
+                <button class="view" onclick="Articles">View All</button>
+
+                <div class="report-body">
+                    <div class="report-topic-heading">
+                        <h3 class="t-op">Articles</h3>
+                        <h3 class="t-op">Page Visits</h3>
+                        <h3 class="t-op">Amount of Votes</h3>
+                    </div>
+
+                <div class="items">
+                    <div class="item-1">
+                        <h3 class="t-op-nextlvl">Article 73</h3>
+                        <h3 class="t-op-nextlvl">2.9K</h3>
+                        <h3 class="t-op-nextlvl">210</h3>
+                        <h3 class="t-op-nextlvl">Published</h3>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <div class="item-1">
+                        <h3 class="t-op-nextlvl">Article 23</h3>
+                        <h3 class="t-op-nextlvl">6.0K</h3>
+                        <h3 class="t-op-nextlvl">156</h3>
+                        <h3 class="t-op-nextlvl">Reviewed before publishing</h3>
+                    </div>
+
+                    <div class="items">
+                        <div class="item-1">
+                            <h3 class="t-op-nextlvl">Article 73</h3>
+                            <h3 class="t-op-nextlvl">7.2K</h3>
+                            <h3 class="t-op-nextlvl">314</h3>
+                            <h3 class="t-op-nextlvl">Published</h3>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
