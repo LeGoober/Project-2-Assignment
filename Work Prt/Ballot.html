@@ -44,7 +44,6 @@
             margin: 20px 0;
             text-align: center; /* Center align the button */
         }
-
         .submit-container button {
             padding: 10px 20px;
             font-size: 16px;
@@ -59,140 +58,7 @@
 
     <!-- Container holding the tables -->
     <div class="table-container">
-        <!-- First Table -->
-        <table id="table1">
-            <caption>National elections</caption>
-            <thead>
-                <tr>
-                    <th class="col-large">Party name</th>
-                    <th class="col-medium">Logo</th>
-                    <th class="col-medium">Party code</th>
-                    <th class="checkbox-column">Vote</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Party 1</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 1</td>
-                    <td><input type="checkbox" name="checkbox1"></td>
-                </tr>
-                <tr>
-                    <td>Party 2</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 2</td>
-                    <td><input type="checkbox" name="checkbox2"></td>
-                </tr>
-                <tr>
-                    <td>Party 3</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 3</td>
-                    <td><input type="checkbox" name="checkbox3"></td>
-                </tr>
-                <tr>
-                    <td>Party 4</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 4</td>
-                    <td><input type="checkbox" name="checkbox4"></td>
-                </tr>
-                <tr>
-                    <td>Party 5</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 5</td>
-                    <td><input type="checkbox" name="checkbox5"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Second Table (identical to the first) -->
-        <table id="table2">
-            <caption>Regional elections</caption>
-            <thead>
-                <tr>
-                    <th class="col-large">Party name</th>
-                    <th class="col-medium">Logo</th>
-                    <th class="col-medium">Party code</th>
-                    <th class="checkbox-column">Vote</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Party 1</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 1</td>
-                    <td><input type="checkbox" name="checkbox1"></td>
-                </tr>
-                <tr>
-                    <td>Party 2</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 2</td>
-                    <td><input type="checkbox" name="checkbox2"></td>
-                </tr>
-                <tr>
-                    <td>Party 3</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 3</td>
-                    <td><input type="checkbox" name="checkbox3"></td>
-                </tr>
-                <tr>
-                    <td>Party 4</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 4</td>
-                    <td><input type="checkbox" name="checkbox4"></td>
-                </tr>
-                <tr>
-                    <td>Party 5</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 5</td>
-                    <td><input type="checkbox" name="checkbox5"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Third Table (identical to the first) -->
-        <table id="table3">
-            <caption>Local elections</caption>
-            <thead>
-                <tr>
-                    <th class="col-large">Party name</th>
-                    <th class="col-medium">Logo</th>
-                    <th class="col-medium">Party code</th>
-                    <th class="checkbox-column">Vote</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Party 1</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 1</td>
-                    <td><input type="checkbox" name="checkbox1"></td>
-                </tr>
-                <tr>
-                    <td>Party 2</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 2</td>
-                    <td><input type="checkbox" name="checkbox2"></td>
-                </tr>
-                <tr>
-                    <td>Party 3</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 3</td>
-                    <td><input type="checkbox" name="checkbox3"></td>
-                </tr>
-                <tr>
-                    <td>Party 4</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 4</td>
-                    <td><input type="checkbox" name="checkbox4"></td>
-                </tr>
-                <tr>
-                    <td>Party 5</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 5</td>
-                    <td><input type="checkbox" name="checkbox5"></td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Placeholder for tables -->
     </div>
 
     <div class="submit-container">
@@ -200,6 +66,82 @@
     </div>
 
     <script>
+        // Define data for the parties
+        const partiesData = {
+            national: [
+                { name: "Party 1", logo: "path/to/your/image1.jpg", code: "PTY 1" },
+                { name: "Party 2", logo: "path/to/your/image2.jpg", code: "PTY 2" },
+                { name: "Party 3", logo: "path/to/your/image3.jpg", code: "PTY 3" },
+                { name: "Party 4", logo: "path/to/your/image4.jpg", code: "PTY 4" },
+                { name: "Party 5", logo: "path/to/your/image5.jpg", code: "PTY 5" },
+                { name: "Party 6", logo: "path/to/your/image5.jpg", code: "PTY 6"}
+            ],
+            regional: [
+                { name: "Party A", logo: "path/to/your/imageA.jpg", code: "PTY A" },
+                { name: "Party B", logo: "path/to/your/imageB.jpg", code: "PTY B" },
+                { name: "Party C", logo: "path/to/your/imageC.jpg", code: "PTY C" },
+                { name: "Party D", logo: "path/to/your/imageD.jpg", code: "PTY D" },
+                { name: "Party E", logo: "path/to/your/imageE.jpg", code: "PTY E" }
+            ],
+            local: [
+                { name: "Party X", logo: "path/to/your/imageX.jpg", code: "PTY X" },
+                { name: "Party Y", logo: "path/to/your/imageY.jpg", code: "PTY Y" },
+                { name: "Party Z", logo: "path/to/your/imageZ.jpg", code: "PTY Z" },
+                { name: "Party W", logo: "path/to/your/imageW.jpg", code: "PTY W" },
+                { name: "Party V", logo: "path/to/your/imageV.jpg", code: "PTY V" }
+            ]
+        };
+
+        // Define the headers for the table
+        const headers = ["Party name", "Logo", "Party code", "Vote"];
+
+        // Define the number of tables and their captions
+        const tablesData = [
+            { id: "table1", caption: "National elections", data: partiesData.national },
+            { id: "table2", caption: "Regional elections", data: partiesData.regional },
+            { id: "table3", caption: "Local elections", data: partiesData.local }
+        ];
+
+        // Generate the tables dynamically
+        function generateTables(tablesData) {
+            const tableContainer = document.querySelector('.table-container');
+
+            tablesData.forEach(tableData => {
+                // Create a table element
+                const table = document.createElement('table');
+                table.id = tableData.id;
+
+                // Create and set caption
+                const caption = table.createCaption();
+                caption.textContent = tableData.caption;
+
+                // Create the header row
+                const thead = table.createTHead();
+                const headerRow = thead.insertRow();
+                headers.forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+
+                // Create the body rows
+                const tbody = table.createTBody();
+                tableData.data.forEach((party, index) => {
+                    const row = tbody.insertRow();
+                    row.insertCell().textContent = party.name;
+                    row.insertCell().innerHTML = `<img src="${party.logo}" alt="Logo" width="100" height="50">`;
+                    row.insertCell().textContent = party.code;
+                    row.insertCell().innerHTML = `<input type="checkbox" name="checkbox${index + 1}">`;
+                });
+
+                // Append the table to the container
+                tableContainer.appendChild(table);
+            });
+        }
+
+        // Call the function to generate tables
+        generateTables(tablesData);
+
         document.addEventListener('DOMContentLoaded', function() {
             function handleCheckboxClick(event) {
                 const checkboxes = event.target.closest('table').querySelectorAll('input[type="checkbox"]');
