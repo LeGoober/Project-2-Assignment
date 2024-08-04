@@ -12,14 +12,38 @@
 </head>
 <body>
 
-    <nav>
-        <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a2 href="#logo">Logo</a2>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="path/to/your/logo.jpg" alt="Logo" class="logo">
         </div>
-    </nav> 
+        <div class="site-name">YourVote+</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <a href="#login" class="dropbtn">Login</a>
+                <div class="dropdown-content">
+                    <a href="#admin">Admin</a>
+                    <a href="Login.html">Voter</a>
+                    <a href="RegistrationForm.html">Register</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#voting-portal" class="dropbtn">Voting Portal</a>
+                <div class="dropdown-content">
+                    <a href="#manifesto">Manifesto</a>
+                    <a href="Ballot.html">Ballots</a>
+                    <a href="#results">Results</a>
+                </div>
+            </div>
+            <a href="#contact">Contacts</a>
+
+            <a href="#about">About us</a>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+    </nav>
     
     <form action="/action_page.php" method="post">
         <div class="container">
@@ -217,6 +241,18 @@
             }
         });
 
+        function mySidebarOpen() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = 'none'; // Hide hamburger
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)"; // Add background overlay
+        }
+
+        function mySidebarClose() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block"; // Show hamburger
+            document.body.style.backgroundColor = "white"; // Remove background overlay
+        }
+
 
 
             
@@ -227,7 +263,7 @@
 
         <div class="footer-container">
 
-            <div class="section">
+            <div class="section" id="about">
                 <h1>About us</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
             </div>
@@ -239,7 +275,7 @@
                 <a href="" style="font-size: 12px;">Blah blah blah</a>
             </div>
             
-            <div class="section">
+            <div class="section" id="contact">
                 <h1>Contact us</h1>
                 <p style="font-size: 12px;">FREDJK<br>
                     1001 Observatory Rd, Observatory, South Africa, 7925<br>
