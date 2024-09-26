@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <link rel="stylesheet" href="results.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            color: black;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+        }
+        .navigation-bar{
+            background-color: #03A9F4;
+            margin: 0;
+            color: white;
+            font-size: large;
+            font-weight: 600;
+            padding: 1rem;
+        }
+        .navigation-bar .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navigation-bar .container .right{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero-section{
+            padding: 2rem;
+            background-color: #013d60;
+            color: white;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+        .hero-section .right{
+            text-align: right;
+        }
+
+        .navigation-bar .container .left{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .card-container{
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .party-card{
+            border: 1px solid grey;
+            width: 300px;
+            padding: 1rem;
+        }
+
+        .profile{
+            display: flex;
+            gap: 1rem;
+        }
+
+        .party-card-container{
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .logo img{
+            border-radius: 10%;
+        }
+
+        .main-container{
+            margin-top: 3rem;
+        }
+        .mt-2{
+            margin-top: 3rem;
+        }
+
+        .mb-2{
+            margin-bottom: 3rem;
+        }
+        .stat{
+            text-align: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .voter-stats{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navigation-bar">
+            <div class="container">
+                <div class="left">
+                    
+                </div>
+                <div class="right">
+                    <input class="form-control" type="search" name="" id="" placeholder="search...">
+                    
+                    <a href="#">Login</a>
+                    <a href="#"> Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section">
+        <div class="left">
+            
+        </div>
+        <div class="right">
+            <h1>2024 National Voting Results</h1>
+            <h4>Recent south african national voting results.</h4>
+        </div>
+    </div>
+
+  
+
+
+    <div class="main-container">
+        <div class="card-container">
+            <div class="title mb-2">
+                <h3>2024 NATIONAL ELECTION</h3>
+                <p>Latest election results showing top six leading parties. </p>
+            </div>
+            <div class="voter-stats mt-2 mb-2">
+
+                <div class="stat">
+                  <div class="img">
+                      <img src="population.svg" alt="" width="auto" height="100px">
+                  </div>
+          
+                  <h5>Registered population</h5>
+                  <p id ="Registered population">Loading....</p>
+                </div>
+          
+                <div class="stat">
+                  <div class="img">
+                      <img src="voting-svgrepo-com.svg" alt="" width="auto" height="100px">
+                  </div>
+          
+                  <h5>Total votes cast</h5>
+                  <p id ="Total votes cast">Loading...</p>
+                </div>
+          
+                <div class="stat">
+                  <div class="img">
+                      <img src="vote-free-3-svgrepo-com.svg" alt="" width="auto" height="100px">
+                  </div>
+          
+                  <h5>Total valid votes</h5>
+                  <p id="Total valid votes">Loading....</p>
+                </div>
+          
+                <div class="stat">
+                  <div class="img">
+                      <img src="wrong-user-svgrepo-com.svg" alt="" width="auto" height="100px">
+                  </div>
+          
+                  <h5>Spoilt Votes</h5>
+                  <p id ="Spoilt votes">Loading...</p>
+                </div>
+          
+          
+              </div>
+            <div class="party-card-container">
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="ANC-logo.jpg" alt=""  height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>ANC</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="stats">
+                        <div class="National votes">
+                            <h5>National votes</h5>
+                            <p id= "national-votes">Loading.....</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local votes</h5>
+                            <p id = "Local-votes">Loading.....</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id = "Regional-votes">Loading.....</p>
+
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="EffLogo2.png" alt=""  height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>EFF</h4>
+                        </div>
+                    </div>
+    
+                    <hr>
+                    <div class="stats">
+                        <div class="National votes">
+                            <h5>National votes</h5>
+                            <p id = "national-votess">Loading....</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local votes</h5>
+                            <p id="Local-votess">Loading...</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id= "Regional-votess">Loading....</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="da.jpg" alt=""  height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>DA</h4>
+                        </div>
+                    </div>
+    
+                    <hr>
+                    <div class="stats">
+                        <div class="Nationalvotes">
+                            <h5>National results</h5>
+                            <p id ="nationalvotes">Loading....</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local votes</h5>
+                            <p id= "Localvotes">Loading....</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id= "Regionalvotes">Loading....</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="IFP.png" alt=""  height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>IFP</h4>
+                        </div>
+                    </div>
+    
+                    <hr>
+                    <div class="stats">
+                        <div class="National votes">
+                            <h5>National votes</h5>
+                            <p id="national">Loading...</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local votes</h5>
+                            <p id ="Local">Loading....</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id = "Regional">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="party-card-container">
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="MK.png" alt="" height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>MK</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="stats">
+                        <div class="National votes">
+                            <h5>National votes</h5>
+                            <p id= "n">Loading....</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local votes</h5>
+                            <p id = "L">Loading....</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id = "R">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="bosa.webp" alt="" height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>BOSA</h4>
+                        </div>
+                    </div>
+    
+                    <hr>
+                    <div class="stats">
+                        <div class="national votes">
+                            <h5>National votes</h5>
+                            <p id ="Na">Loading....</p>
+                        </div>
+    
+                        <div class=" Local votes">
+                            <h5>Local Votes</h5>
+                            <p id ="Lo">Loading....</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id = "Re">Loading....</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="actionSA.png" alt="" height="70px" width="auto">
+                        </div>
+                        <div class="name">
+                            <h4>Action SA</h4>
+                        </div>
+                    </div>
+    
+                    <hr>
+                    <div class="stats">
+                        <div class="National votes">
+                            <h5>National votes</h5>
+                            <p id = "nat">Loading....</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local Votes</h5>
+                            <p id= "Loc">Loading...</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id= "Reg">Loading....</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="party-card">
+                    <div class="profile">
+                        <div class="logo">
+                            <img src="ffplus.png" alt="" height="70px" width="auto" >
+                        </div>
+                        <div class="name">
+                            <h4>FF plus</h4>
+                        </div>
+                    </div>
+    
+                    <hr>
+                    <div class="stats">
+                        <div class="National votes">
+                            <h5>Natioanl votes</h5>
+                            <p id ="nati">Loading...</p>
+                        </div>
+    
+                        <div class="Local votes">
+                            <h5>Local Votes</h5>
+                            <p id ="Loca">Loading...</p>
+                        </div>
+    
+                        <div class="Regional votes">
+                            <h5>Regional votes</h5>
+                            <p id ="Regi">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to fetch voting results
+        async function fetchVotingResults() {
+            try {
+                // Replace with our API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('national-votes').textContent = data.nationalVotes;
+                document.getElementById('Local-votes').textContent = data.localVotes;
+                document.getElementById('Regional-voted').textContent = data.regional
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('national-votes').textContent = 'Error loading data';
+                document.getElementById('Local-votes').textContent = 'Error loading data';
+                document.getElementById('Regional-votes').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with our API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('national-votess').textContent = data.nationalVotes;
+                document.getElementById('Local-votess').textContent = data.localVotes;
+                document.getElementById('Regional-voteds').textContent = data.regionals
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('national-votess').textContent = 'Error loading data';
+                document.getElementById('Local-votess').textContent = 'Error loading data';
+                document.getElementById('Regional-votess').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('nationalvotes').textContent = data.nationalVotes;
+                document.getElementById('Localvotes').textContent = data.localVotes;
+                document.getElementById('Regionalvotes').textContent = data.regionals
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('nationalvotes').textContent = 'Error loading data';
+                document.getElementById('Localvotes').textContent = 'Error loading data';
+                document.getElementById('Regionalvotes').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('national').textContent = data.nationalVotes;
+                document.getElementById('Local').textContent = data.localVotes;
+                document.getElementById('Regional').textContent = data.regionals
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('national').textContent = 'Error loading data';
+                document.getElementById('Local').textContent = 'Error loading data';
+                document.getElementById('Regional').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('n').textContent = data.nationalVotes;
+                document.getElementById('L').textContent = data.localVotes;
+                document.getElementById('R').textContent = data.regionals
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('n').textContent = 'Error loading data';
+                document.getElementById('L').textContent = 'Error loading data';
+                document.getElementById('R').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('Na').textContent = data.nationalVotes;
+                document.getElementById('Lo').textContent = data.localVotes;
+                document.getElementById('Re').textContent = data.regionals
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('Na').textContent = 'Error loading data';
+                document.getElementById('Lo').textContent = 'Error loading data';
+                document.getElementById('Re').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('nati').textContent = data.nationalVotes;
+                document.getElementById('Loc').textContent = data.localVotes;
+                document.getElementById('Reg').textContent = data.regional
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('nat').textContent = 'Error loading data';
+                document.getElementById('Loc').textContent = 'Error loading data';
+                document.getElementById('Reg').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('nati').textContent = data.nationalVotes;
+                document.getElementById('Loca').textContent = data.localVotes;
+                document.getElementById('Regi').textContent = data.regional
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('nati').textContent = 'Error loading data';
+                document.getElementById('Loca').textContent = 'Error loading data';
+                document.getElementById('Regi').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('nati').textContent = data.nationalVotes;
+                document.getElementById('Loca').textContent = data.localVotes;
+                document.getElementById('Regi').textContent = data.regional
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('nati').textContent = 'Error loading data';
+                document.getElementById('Loca').textContent = 'Error loading data';
+                document.getElementById('Regi').textContent = 'Error loading data';
+            }
+            try {
+                // Replace with your API endpoint
+                const response = await fetch('https://your-backend-api.com/voting-results');
+                const data = await response.json();
+
+                // Update the HTML with the fetched data
+                document.getElementById('Registered population').textContent = data.nationalVotes;
+                document.getElementById('Total votes cast').textContent = data.localVotes;
+                document.getElementById('Total valid votes').textContent = data.regional
+                document.getElementById('Spoiltt votes').textContent = data.Spolttvotes
+
+            } catch (error) {
+                console.error('Error fetching voting results:', error);
+                // Handle errors and update the UI accordingly
+                document.getElementById('Registered population').textContent = 'Error loading data';
+                document.getElementById('Total votes cast').textContent = 'Error loading data';
+                document.getElementById('Total valid votes').textContent = 'Error loading data';
+                document.getElementById('Spoilt votes').textContent = 'Error loading data';
+            }
+            
+        }
+
+        // Fetch results when the page loads
+        window.onload = fetchVotingResults;
+    </script>
+</body>
+</html>
+    <footer>
+        <div class="footer"></div>
+    </footer>
+</body>
+</html>
