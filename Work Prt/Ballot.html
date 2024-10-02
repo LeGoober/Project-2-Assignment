@@ -4,7 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ballots</title>
+    
     <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
+        }
+
+        .logo-container {
+            flex: 0 0 auto;
+            margin-right: 10px; /* Reduce the margin to bring site name closer */
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        .site-name {
+            font-size: 1.5em;
+            margin-right: auto; /* Push the rest of the nav links to the right */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search {
+            display: none;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px; /* Adjust spacing between input and button */
+        }
+
+        #searchBtn {
+            padding: 5px 10px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-container.active #search {
+            display: inline-block;
+        }
+
+        .search-container.active #searchBtn {
+            display: inline-block;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #575757;
+        }
+
+        .navbar.active {
+            opacity: 0.5;
+        }
         /* Container for the tables to align them side by side */
         .table-container {
             display: flex; /* Use Flexbox for layout */
@@ -25,6 +131,9 @@
         }
         th {
             background-color: #f2f2f2; /* Light gray background for headers */
+            font-weight: bold; /* Make the headers bold */
+            font-size: 1.2em; /* Increase the font size of the headers */
+
         }
         .col-large {
             width: 30%; /* Width for larger columns */
@@ -44,155 +153,117 @@
             margin: 20px 0;
             text-align: center; /* Center align the button */
         }
-
         .submit-container button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
         }
+
+        /* Center headings */
+        h1, h2 {
+            text-align: center; /* Center align the headings */
+        }
+
+        /* Center table captions */
+        caption {
+            text-align: center; /* Center align table captions */
+            font-weight: bolder;
+            font-size: 1.4em; /* Increase the font size of the headers */
+        }
+
+        footer {
+            background-color: #333; /* Set your desired background color (e.g., dark gray) */
+            color: #fff; /* Set your desired text color (e.g., white) */
+            text-align: center;
+            padding: 20px 0; /* Increase padding for more space */
+            bottom: 0;
+            width: 100%;
+            font-size: 14px; /* Adjust font size as needed */
+        }
+
+        footer a {
+            color: #fff; /* Set link color to white */
+            font-size: 14px; /* Adjust link font size */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+        footer h1 {
+            display: inline-block; /* Display headings as inline-block elements */
+            margin: 0 10px; /* Add some spacing between headings */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%; /* Set the width of the container */
+            margin: 0 auto; /* Center the container */
+        }
+        .section {
+            flex: 1;
+            margin-right: 20px; /* Adjust the margin between sections as needed */
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .section p {
+            text-align: justify; /* Align paragraph text to the left */
+        }
     </style>
+    
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="path/to/your/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="site-name">YourVote+</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <a href="#login" class="dropbtn">Login</a>
+                <div class="dropdown-content">
+                    <a href="#admin">Admin</a>
+                    <a href="Login.html">Voter</a>
+                    <a href="RegistrationForm.html">Register</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#voting-portal" class="dropbtn">Voting Portal</a>
+                <div class="dropdown-content">
+                    <a href="#manifesto">Manifesto</a>
+                    <a href="Ballot.html">Ballots</a>
+                    <a href="#results">Results</a>
+                </div>
+            </div>
+            <a href="#contact">Contacts</a>
+
+            <a href="#about">About us</a>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+    </nav>
 
     <h1>Voting Ballots</h1>
     <h2>Please vote for only 1 choice per ballot</h2>
 
     <!-- Container holding the tables -->
     <div class="table-container">
-        <!-- First Table -->
-        <table id="table1">
-            <caption>National elections</caption>
-            <thead>
-                <tr>
-                    <th class="col-large">Party name</th>
-                    <th class="col-medium">Logo</th>
-                    <th class="col-medium">Party code</th>
-                    <th class="checkbox-column">Vote</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Party 1</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 1</td>
-                    <td><input type="checkbox" name="checkbox1"></td>
-                </tr>
-                <tr>
-                    <td>Party 2</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 2</td>
-                    <td><input type="checkbox" name="checkbox2"></td>
-                </tr>
-                <tr>
-                    <td>Party 3</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 3</td>
-                    <td><input type="checkbox" name="checkbox3"></td>
-                </tr>
-                <tr>
-                    <td>Party 4</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 4</td>
-                    <td><input type="checkbox" name="checkbox4"></td>
-                </tr>
-                <tr>
-                    <td>Party 5</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 5</td>
-                    <td><input type="checkbox" name="checkbox5"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Second Table (identical to the first) -->
-        <table id="table2">
-            <caption>Regional elections</caption>
-            <thead>
-                <tr>
-                    <th class="col-large">Party name</th>
-                    <th class="col-medium">Logo</th>
-                    <th class="col-medium">Party code</th>
-                    <th class="checkbox-column">Vote</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Party 1</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 1</td>
-                    <td><input type="checkbox" name="checkbox1"></td>
-                </tr>
-                <tr>
-                    <td>Party 2</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 2</td>
-                    <td><input type="checkbox" name="checkbox2"></td>
-                </tr>
-                <tr>
-                    <td>Party 3</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 3</td>
-                    <td><input type="checkbox" name="checkbox3"></td>
-                </tr>
-                <tr>
-                    <td>Party 4</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 4</td>
-                    <td><input type="checkbox" name="checkbox4"></td>
-                </tr>
-                <tr>
-                    <td>Party 5</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 5</td>
-                    <td><input type="checkbox" name="checkbox5"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Third Table (identical to the first) -->
-        <table id="table3">
-            <caption>Local elections</caption>
-            <thead>
-                <tr>
-                    <th class="col-large">Party name</th>
-                    <th class="col-medium">Logo</th>
-                    <th class="col-medium">Party code</th>
-                    <th class="checkbox-column">Vote</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Party 1</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 1</td>
-                    <td><input type="checkbox" name="checkbox1"></td>
-                </tr>
-                <tr>
-                    <td>Party 2</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 2</td>
-                    <td><input type="checkbox" name="checkbox2"></td>
-                </tr>
-                <tr>
-                    <td>Party 3</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 3</td>
-                    <td><input type="checkbox" name="checkbox3"></td>
-                </tr>
-                <tr>
-                    <td>Party 4</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 4</td>
-                    <td><input type="checkbox" name="checkbox4"></td>
-                </tr>
-                <tr>
-                    <td>Party 5</td>
-                    <td><img src="path/to/your/image.jpg" alt="Logo" width="100" height="50"></td>
-                    <td>PTY 5</td>
-                    <td><input type="checkbox" name="checkbox5"></td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Placeholder for tables -->
     </div>
 
     <div class="submit-container">
@@ -200,6 +271,82 @@
     </div>
 
     <script>
+        // Define data for the parties
+        const partiesData = {
+            national: [
+                { name: "Party 1", logo: "path/to/your/image1.jpg", code: "PTY 1" },
+                { name: "Party 2", logo: "path/to/your/image2.jpg", code: "PTY 2" },
+                { name: "Party 3", logo: "path/to/your/image3.jpg", code: "PTY 3" },
+                { name: "Party 4", logo: "path/to/your/image4.jpg", code: "PTY 4" },
+                { name: "Party 5", logo: "path/to/your/image5.jpg", code: "PTY 5" },
+                { name: "Party 6", logo: "path/to/your/image5.jpg", code: "PTY 6"}
+            ],
+            regional: [
+                { name: "Party A", logo: "path/to/your/imageA.jpg", code: "PTY A" },
+                { name: "Party B", logo: "path/to/your/imageB.jpg", code: "PTY B" },
+                { name: "Party C", logo: "path/to/your/imageC.jpg", code: "PTY C" },
+                { name: "Party D", logo: "path/to/your/imageD.jpg", code: "PTY D" },
+                { name: "Party E", logo: "path/to/your/imageE.jpg", code: "PTY E" }
+            ],
+            local: [
+                { name: "Party X", logo: "path/to/your/imageX.jpg", code: "PTY X" },
+                { name: "Party Y", logo: "path/to/your/imageY.jpg", code: "PTY Y" },
+                { name: "Party Z", logo: "path/to/your/imageZ.jpg", code: "PTY Z" },
+                { name: "Party W", logo: "path/to/your/imageW.jpg", code: "PTY W" },
+                { name: "Party V", logo: "path/to/your/imageV.jpg", code: "PTY V" }
+            ]
+        };
+
+        // Define the headers for the table
+        const headers = ["Party name", "Logo", "Party code", "Vote"];
+
+        // Define the number of tables and their captions
+        const tablesData = [
+            { id: "table1", caption: "National elections", data: partiesData.national },
+            { id: "table2", caption: "Regional elections", data: partiesData.regional },
+            { id: "table3", caption: "Local elections", data: partiesData.local }
+        ];
+
+        // Generate the tables dynamically
+        function generateTables(tablesData) {
+            const tableContainer = document.querySelector('.table-container');
+
+            tablesData.forEach(tableData => {
+                // Create a table element
+                const table = document.createElement('table');
+                table.id = tableData.id;
+
+                // Create and set caption
+                const caption = table.createCaption();
+                caption.textContent = tableData.caption;
+
+                // Create the header row
+                const thead = table.createTHead();
+                const headerRow = thead.insertRow();
+                headers.forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+
+                // Create the body rows
+                const tbody = table.createTBody();
+                tableData.data.forEach((party, index) => {
+                    const row = tbody.insertRow();
+                    row.insertCell().textContent = party.name;
+                    row.insertCell().innerHTML = `<img src="${party.logo}" alt="Logo" width="100" height="50">`;
+                    row.insertCell().textContent = party.code;
+                    row.insertCell().innerHTML = `<input type="checkbox" name="checkbox${index + 1}">`;
+                });
+
+                // Append the table to the container
+                tableContainer.appendChild(table);
+            });
+        }
+
+        // Call the function to generate tables
+        generateTables(tablesData);
+
         document.addEventListener('DOMContentLoaded', function() {
             function handleCheckboxClick(event) {
                 const checkboxes = event.target.closest('table').querySelectorAll('input[type="checkbox"]');
@@ -240,7 +387,72 @@
                 }
             });
         });
+
+        //nav bar script
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('search');
+            const navbar = document.querySelector('.navbar');
+
+            searchBtn.addEventListener('click', function() {
+                if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+                    searchInput.style.display = 'inline-block';
+                    navbar.classList.add('active');
+                } else {
+                    searchInput.style.display = 'none';
+                    navbar.classList.remove('active');
+                }
+            });
+
+            searchInput.addEventListener('input', function() {
+                const query = searchInput.value.toLowerCase();
+                const content = document.body.innerText.toLowerCase();
+                if (content.includes(query)) {
+                    alert('Search results found.');
+                } else {
+                    alert('No results found.');
+                }
+            });
+        });
+   
+    
     </script>
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="section" id="about">
+                <h1>About us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
+            </div>
+
+            <div class="section">
+                <h1>Links maybe?</h1><br><br>
+                <a href="" style="font-size: 12px;">Blah </a><br>
+                <a href="" style="font-size: 12px;">Blah blah</a><br>
+                <a href="" style="font-size: 12px;">Blah blah blah</a>
+            </div>
+            
+            <div class="section" id="contact">
+                <h1>Contact us</h1>
+                <p style="font-size: 12px;">FREDJK<br>
+                    1001 Observatory Rd, Observatory, South Africa, 7925<br>
+                    Cape Town, South Africa<br>
+                    enquries@fredjk.com
+                </p>
+            </div>
+        </div><br>
+
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+      
+        <br><br>
+       
+        <a>&copy; All content FREDJK 2024.</a>
+
+    </footer>
 
 </body>
 </html>

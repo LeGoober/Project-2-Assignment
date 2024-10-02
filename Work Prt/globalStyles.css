@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    
     background-color: #f0f0f0;
 }
 
@@ -65,47 +65,112 @@ body {
 
 /* Nav Bar Styles */
 .navbar {
-    position: fixed; /* Fix navbar at the top of viewport */
-    top: 0; /* Align navbar to the top */
-    right: 0; /* Align navbar to the right */
-    bottom: 85%; /* Set height of the navbar */
-    width: 100%; /* Set full width */
-    height: 70px; /* Set height of the navbar */
-    background-color: #3c6cda; /* Set background color */
-    overflow: hidden; /* Hide overflowing content */
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
 }
 
-.navbar a {
-    float: right; /* Align links to the right */
-    display: block; /* Make links block-level elements */
-    color: #f2f2f2; /* Set text color */
-    text-align: center; /* Center text horizontally */
-    padding: 20px 20px; /* Set padding */
-    text-decoration: none; /* Remove default text decoration */
+.logo-container {
+    flex: 0 0 auto;
+    margin-right: 10px; /* Reduce the margin to bring site name closer */
 }
 
-.navbar a2 {
-    float: left; /* Align logo to the left */
-    display: block; /* Make logo a block-level element */
-    color: #f2f2f2; /* Set text color */
-    text-align: center; /* Center text horizontally */
-    padding: 20px 20px; /* Set padding */
-    text-decoration: none; /* Remove default text decoration */
+.logo {
+    width: 50px;
 }
 
-.navbar a2:hover {
-    background-color:#627cbb; /* Change background color on hover */
-    color: black; /* Change text color on hover */
+.site-name {
+    font-size: 1.5em;
+    margin-right: auto; /* Push the rest of the nav links to the right */
 }
 
-.navbar a:hover {
-    background-color:#627cbb; /* Change background color on hover */
-    color: black; /* Change text color on hover */
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
-body {
-    padding-top: 85px;  /*Adjust the value to match the height of your navigation bar */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
 }
+
+.nav-links a:hover {
+    background-color: #575757;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search {
+    display: none;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px; /* Adjust spacing between input and button */
+}
+
+#searchBtn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.search-container.active #search {
+    display: inline-block;
+}
+
+.search-container.active #searchBtn {
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757;
+}
+
+.navbar.active {
+    opacity: 0.5;
+}
+
+
 
 
 .logo-container {
@@ -150,24 +215,23 @@ h1 {
 }
 
 footer {
-    
-    background-color: #fff; /* Set your desired background color */
-    color: #000; /* Set your desired text color */
+    background-color: #333; /* Set your desired background color (e.g., dark gray) */
+    color: #fff; /* Set your desired text color (e.g., white) */
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0; /* Increase padding for more space */
     bottom: 0;
     width: 100%;
-    font-size: 10px;
-
+    font-size: 14px; /* Adjust font size as needed */
 }
 
 footer a {
-    color: #000000;
-    font-size: 0.5rem;
+    color: #fff; /* Set link color to white */
+    font-size: 14px; /* Adjust link font size */
+    text-decoration: none; /* Remove underline from links */
 }
-footer a {
-    color: black;
-    text-decoration: none;
+
+footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
 }
 
 footer h1 {
@@ -181,11 +245,9 @@ footer h1 {
     width: 80%; /* Set the width of the container */
     margin: 0 auto; /* Center the container */
 }
-
 .section {
     flex: 1;
     margin-right: 20px; /* Adjust the margin between sections as needed */
-    
 }
 
 .logo-container {

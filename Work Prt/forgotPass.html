@@ -4,78 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
     
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif; /* Set font family for the entire document */
-            background-color: #f4f4f4; /* Set background color */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            display: flex; /* Use flexbox for layout */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set height to 100% of viewport height */
-        }
 
-        /* Navigation Bar Styles */
+        
+        
         .navbar {
-            position: fixed; /* Fix navbar at the top of viewport */
-            top: 0; /* Align navbar to the top */
-            right: 0; /* Align navbar to the right */
-            bottom: 85%; /* Set height of the navbar */
-            width: 100%; /* Set full width */
-            height: 70px; /* Set height of the navbar */
-            background-color: #3c6cda; /* Set background color */
-            overflow: hidden; /* Hide overflowing content */
-        }
-        .navbar a {
-            float: right; /* Align links to the right */
-            display: block; /* Make links block-level elements */
-            color: #f2f2f2; /* Set text color */
-            text-align: center; /* Center text horizontally */
-            padding: 20px 20px; /* Set padding */
-            text-decoration: none; /* Remove default text decoration */
-        }
-        .navbar a:hover {
-            background-color:#627cbb; /* Change background color on hover */
-            color: black; /* Change text color on hover */
-        }
-        .navbar a2 {
-            float: left; /* Align logo to the left */
-            display: block; /* Make logo a block-level element */
-            color: #f2f2f2; /* Set text color */
-            text-align: center; /* Center text horizontally */
-            padding: 20px 20px; /* Set padding */
-            text-decoration: none; /* Remove default text decoration */
-        }
-        .navbar a2:hover {
-            background-color:#627cbb; /* Change background color on hover */
-            color: black; /* Change text color on hover */
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
         }
 
-        /* Side Menu Styles */
-        .side-menu {
-            position: fixed; /* Fix side menu position */
-            top: 70px; /* Adjust position below the navbar */
-            left: 0; /* Align to the left */
-            width: 200px; /* Set width */
-            background-color: #f4f4f4; /* Set background color */
-            padding: 20px; /* Add padding */
-            margin-top: 10px; /* Add margin at the top */
+        .logo-container {
+            flex: 0 0 auto;
+            margin-right: 10px; /* Reduce the margin to bring site name closer */
         }
-        .side-menu a {
-            display: block; /* Make links block-level elements */
-            color: #333; /* Set text color */
-            padding: 20px 0; /* Set padding */
-            text-decoration: none; /* Remove default text decoration */
+
+        .logo {
+            width: 50px;
         }
-        .side-menu a:hover {
-            background-color: #ddd; /* Change background color on hover */
-            color: black; /* Change text color on hover */
-            padding-left: 20px; /* Add padding to the left for hover effect */
+
+        .site-name {
+            font-size: 1.5em;
+            margin-right: auto; /* Push the rest of the nav links to the right */
         }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search {
+            display: none;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px; /* Adjust spacing between input and button */
+        }
+
+        #searchBtn {
+            padding: 5px 10px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-container.active #search {
+            display: inline-block;
+        }
+
+        .search-container.active #searchBtn {
+            display: inline-block;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #575757;
+        }
+
+        .navbar.active {
+            opacity: 0.5;
+        }
+
 
         /* Reset Container Styles */
         .reset-container {
@@ -84,6 +124,7 @@
             border-radius: 8px; /* Add border radius */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
             width: 300px; /* Set width */
+            
         }
         .reset-container h2 {
             text-align: center; /* Center text horizontally */
@@ -104,9 +145,7 @@
             padding: 10px; /* Add padding */
             background-color: #007bff; /* Set background color */
             color: #fff; /* Set text color */
-            border: none; /* Remove
-
- border */
+            border: none; /* Remove border */
             border-radius: 5px; /* Add border radius */
             cursor: pointer; /* Change cursor to pointer on hover */
         }
@@ -114,124 +153,177 @@
             background-color: #0056b3; /* Change background color on hover */
         }
 
-        /* Footer Styles */
         footer {
-            position: fixed;
+            background-color: #333; /* Set your desired background color (e.g., dark gray) */
+            color: #fff; /* Set your desired text color (e.g., white) */
+            text-align: center;
+            padding: 20px 0; /* Increase padding for more space */
             bottom: 0;
-            left: 0;
-            right:  0;
-            z-index: 100;
+            width: 100%;
+            font-size: 14px; /* Adjust font size as needed */
         }
 
-        footer.footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #fff;
-            border-top: 1px solid #ddd;
+        footer a {
+            color: #fff; /* Set link color to white */
+            font-size: 14px; /* Adjust link font size */
+            text-decoration: none; /* Remove underline from links */
         }
 
-        footer.section {
-            flex: 1;
-            text-align: left;
-        }
-
-        footer.logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        footer.logo {
-            width: 100px;
-            margin-right: 10px;
+        footer a:hover {
+            text-decoration: underline; /* Add underline on hover */
         }
 
         footer h1 {
-            font-size: 1rem;
-            margin: 0;
+            display: inline-block; /* Display headings as inline-block elements */
+            margin: 0 10px; /* Add some spacing between headings */
         }
 
-        footer p {
-            font-size: 0.8rem;
-            margin: 0;
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%; /* Set the width of the container */
+            margin: 0 auto; /* Center the container */
         }
 
-        
+        .section {
+            flex: 1;
+            margin-right: 20px; /* Adjust the margin between sections as needed */
+        }
 
-        footer a:hover {
-            text-decoration: underline;
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust the margin as needed */
         }
-        footer a {
-            color: black;
-            text-decoration: none;
+
+        .logo {
+            width: 150px;
         }
+
+        .section p {
+            text-align: justify; /* Align paragraph text to the left */
+        }
+
+        /* Centering the reset container */
+        .reset-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+            padding: 20px; /* Add padding if needed */
+        }
+
+
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a2 href="#logo">Logo</a2>
-</div>
-
-<!-- Side Menu -->
-<div class="side-menu">
-    <a href="#overview">Overview</a>
-    <a href="#ballot">Ballot</a>
-    <a href="#results">Results</a>
-    <a href="#faqs">FAQs</a>
-</div>
-
-<!-- Reset Container -->
-<div class="reset-container">
-    <h2>Reset Password</h2>
-    <form class="reset-form" action="#" method="post">
-        <h3>Enter your email here to reset your password</h3>
-        <input type="text" name="Email" placeholder="Email" required>
-        <button type="submit">Reset Password</button>
-    </form>
-</div>
-
-<footer>
-
-    <div class="footer-container">
-
-        <div class="section">
-            <h1>About us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="path/to/your/logo.jpg" alt="Logo" class="logo">
         </div>
-
-        <div class="section">
-            <h1>Links maybe?</h1><br><br>
-            <a href="" style="font-size: 12px;">Blah </a><br>
-            <a href="" style="font-size: 12px;">Blah blah</a><br>
-            <a href="" style="font-size: 12px;">Blah blah blah</a>
+        <div class="site-name">YourVote+</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <a href="#login" class="dropbtn">Login</a>
+                <div class="dropdown-content">
+                    <a href="#admin">Admin</a>
+                    <a href="Login.html">Voter</a>
+                    <a href="RegistrationForm.html">Register</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#voting-portal" class="dropbtn">Voting Portal</a>
+                <div class="dropdown-content">
+                    <a href="#manifesto">Manifesto</a>
+                    <a href="Ballot.html">Ballots</a>
+                    <a href="#results">Results</a>
+                </div>
+            </div>
+            <a href="#contact">Contacts</a>
+            <a href="#about">About us</a>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search...">
+                <button id="searchBtn">Search</button>
+            </div>
         </div>
-        
-        <div class="section">
-            <h1>Contact us</h1>
-            <p style="font-size: 12px;">FREDJK<br>
-                1001 Observatory Rd, Observatory, South Africa, 7925<br>
-                Cape Town, South Africa<br>
-                enquries@fredjk.com
-            </p>
+    </nav>
+    
+
+    <!-- Reset Container -->
+    <div class="reset-wrapper">
+        <div class="reset-container">
+            <h2>Reset Password</h2>
+            <form class="reset-form" action="#" method="post">
+                <h3>Enter your email here to reset your password</h3>
+                <input type="text" name="Email" placeholder="Email" required>
+                <button type="submit">Reset Password</button>
+            </form>
         </div>
-    </div><br>
+    </div>
 
-    <img src="" alt="Social media logo" class="logo">
-    <img src="" alt="Social media logo" class="logo">
-    <img src="" alt="Social media logo" class="logo">
-    <img src="" alt="Social media logo" class="logo">
-  
-    <br><br>
-   
-    <a>&copy; All content FREDJK 2024.</a>
+    <footer>
+        <div class="footer-container">
 
-</footer>
+            <div class="section" id="about">
+                <h1>About us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
+            </div>
+
+            <div class="section">
+                <h1>Links maybe?</h1><br><br>
+                <a href="" style="font-size: 12px;">Blah </a><br>
+                <a href="" style="font-size: 12px;">Blah blah</a><br>
+                <a href="" style="font-size: 12px;">Blah blah blah</a>
+            </div>
+            
+            <div class="section" id="contact">
+                <h1>Contact us</h1>
+                <p style="font-size: 12px;">FREDJK<br>
+                    1001 Observatory Rd, Observatory, South Africa, 7925<br>
+                    Cape Town, South Africa<br>
+                    enquries@fredjk.com
+                </p>
+            </div>
+        </div><br>
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <br><br>
+        <a>&copy; All content FREDJK 2024.</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('search');
+        const navbar = document.querySelector('.navbar');
+
+        searchBtn.addEventListener('click', function() {
+            if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+                searchInput.style.display = 'inline-block';
+                navbar.classList.add('active');
+            } else {
+                searchInput.style.display = 'none';
+                navbar.classList.remove('active');
+            }
+        });
+
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+            const content = document.body.innerText.toLowerCase();
+            if (content.includes(query)) {
+                alert('Search results found.');
+            } else {
+                alert('No results found.');
+            }
+        });
+    });
+
+    </script>
+    
 
 </body>
 </html>

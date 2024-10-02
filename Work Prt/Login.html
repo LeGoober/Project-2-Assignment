@@ -4,93 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
     <style>
-        /* Global Styles */
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed; /* Fixed positioning for the navbar */
+            width: 100%; /* Full width */
+            top: 0; /* Align to the top of the page */
+            z-index: 1000; /* Ensure it is above other content */
+        }
+
+        .logo-container {
+            flex: 0 0 auto;
+            margin-right: 10px; /* Reduce the margin to bring site name closer */
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        .site-name {
+            font-size: 1.5em;
+            margin-right: auto; /* Push the rest of the nav links to the right */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search {
+            display: none;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px; /* Adjust spacing between input and button */
+        }
+
+        #searchBtn {
+            padding: 5px 10px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-container.active #search {
+            display: inline-block;
+        }
+
+        .search-container.active #searchBtn {
+            display: inline-block;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #575757;
+        }
+
+        .navbar.active {
+            opacity: 0.5;
+        }
+
+        /* Body Styles */
         body {
             font-family: Arial, sans-serif; /* Set font family for the entire document */
             background-color: #f4f4f4; /* Set background color */
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
             display: flex; /* Use flexbox for layout */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Set height to 100% of viewport height */
+            flex-direction: column; /* Arrange children in a column */
+            min-height: 100vh; /* Ensure body takes up full viewport height */
         }
 
-        /* Nav Bar Styles */
-        .navbar {
-            position: fixed; /* Fix navbar at the top of viewport */
-            top: 0; /* Align navbar to the top */
-            right: 0; /* Align navbar to the right */
-            bottom: 85%; /* Set height of the navbar */
-            width: 100%; /* Set full width */
-            height: 70px; /* Set height of the navbar */
-            background-color: #3c6cda; /* Set background color */
-            overflow: hidden; /* Hide overflowing content */
+        .main-content {
+            flex: 1; /* Allow content to grow and take up available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px 20px; /* Add padding for space from navbar and footer */
         }
 
-        .navbar a {
-            float: right; /* Align links to the right */
-            display: block; /* Make links block-level elements */
-            color: #f2f2f2; /* Set text color */
-            text-align: center; /* Center text horizontally */
-            padding: 20px 20px; /* Set padding */
-            text-decoration: none; /* Remove default text decoration */
-        }
-
-        .navbar a2 {
-            float: left; /* Align logo to the left */
-            display: block; /* Make logo a block-level element */
-            color: #f2f2f2; /* Set text color */
-            text-align: center; /* Center text horizontally */
-            padding: 20px 20px; /* Set padding */
-            text-decoration: none; /* Remove default text decoration */
-        }
-
-        .navbar a2:hover {
-            background-color:#627cbb; /* Change background color on hover */
-            color: black; /* Change text color on hover */
-        }
-
-        .navbar a:hover {
-            background-color:#627cbb; /* Change background color on hover */
-            color: black; /* Change text color on hover */
-        }
-
-        /* Side Menu Styles */
-        .side-menu {
-            position: fixed; /* Fix side menu position */
-            top: 70px; /* Adjust position below the navbar */
-            left: 0; /* Align to the left */
-            width: 200px; /* Set width */
-            background-color: #f4f4f4; /* Set background color */
-            padding: 20px; /* Add padding */
-            margin-top: 10px; /* Add margin at the top */
-        }
-
-        .side-menu a {
-            display: block; /* Make links block-level elements */
-            color: #333; /* Set text color */
-            padding: 20px 0; /* Set padding */
-            text-decoration: none; /* Remove default text decoration */
-        }
-
-        .side-menu a:hover {
-            background-color: #ddd; /* Change background color on hover */
-            color: black; /* Change text color on hover */
-            padding-left: 20px; /* Add padding to the left for hover effect */
-        }
-
-        /* Login Container Styles */
         .login-container {
             background-color: #fff; /* Set background color */
             padding: 20px; /* Add padding */
             border-radius: 8px; /* Add border radius */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
             width: 300px; /* Set width */
-           
         }
 
         .login-container h2 {
@@ -113,7 +162,7 @@
         .login-form button {
             width: 100%; /* Set width to 100% */
             padding: 10px; /* Add padding */
-            background-color: #007bff; /*Set background color */
+            background-color: #007bff; /* Set background color */
             color: #fff; /* Set text color */
             border: none; /* Remove border */
             border-radius: 5px; /* Add border radius */
@@ -129,117 +178,146 @@
             margin-top: 10px; /* Add margin at the top */
         }
 
-        /* Footer Styles */
         footer {
-            position: fixed;
+            background-color: #333; /* Set your desired background color (e.g., dark gray) */
+            color: #fff; /* Set your desired text color (e.g., white) */
+            text-align: center;
+            padding: 20px 0; /* Increase padding for more space */
             bottom: 0;
-            left: 0;
-            right:  0;
-            z-index: 100;
+            width: 100%;
+            font-size: 14px; /* Adjust font size as needed */
         }
 
-        footer.footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #fff;
-            border-top: 1px solid #ddd;
+        footer a {
+            color: #fff; /* Set link color to white */
+            font-size: 14px; /* Adjust link font size */
+            text-decoration: none; /* Remove underline from links */
         }
 
-        footer.section {
-            flex: 1;
-            text-align: left;
-        }
-
-        footer.logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        footer.logo {
-            width: 100px;
-            margin-right: 10px;
+        footer a:hover {
+            text-decoration: underline; /* Add underline on hover */
         }
 
         footer h1 {
-            font-size: 1rem;
-            margin: 0;
+            display: inline-block; /* Display headings as inline-block elements */
+            margin: 0 10px; /* Add some spacing between headings */
         }
 
-        footer p {
-            font-size: 0.8rem;
-            margin: 0;
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%; /* Set the width of the container */
+            margin: 0 auto; /* Center the container */
+        }
+
+        .section {
+            flex: 1;
+            margin-right: 20px; /* Adjust the margin between sections as needed */
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .section p {
+            text-align: justify; /* Align paragraph text to the left */
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a2 href="#logo">Logo</a2>
-</div>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="path/to/your/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="site-name">YourVote+</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <a href="#login" class="dropbtn">Login</a>
+                <div class="dropdown-content">
+                    <a href="#admin">Admin</a>
+                    <a href="Login.html">Voter</a>
+                    <a href="RegistrationForm.html">Register</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#voting-portal" class="dropbtn">Voting Portal</a>
+                <div class="dropdown-content">
+                    <a href="#manifesto">Manifesto</a>
+                    <a href="Ballot.html">Ballots</a>
+                    <a href="#results">Results</a>
+                </div>
+            </div>
+            <a href="#contact">Contacts</a>
 
-<!-- Side Menu -->
-<div class="side-menu">
-    <a href="#overview">Overview</a>
-    <a href="#ballot">Ballot</a>
-    <a href="#results">Results</a>
-    <a href="#faqs">FAQs</a>
-</div>
+            <a href="#about">About us</a>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+    </nav>
 
-<!-- Login Container -->
-<div class="login-container">
-    <h2>Login</h2>
-    <form class="login-form" action="#" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
-    <div class="forgot-password">
-        <a href="forgotPass.html">Forgot Password?</a>
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Login Container -->
+        <div class="login-container">
+            <h2>Login</h2>
+            <form class="login-form" action="#" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="forgot-password">
+                <a href="forgotPass.html">Forgot Password?</a>
+            </div>
+        </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer>
 
-    <div class="footer-container">
+    <footer>
 
-        <div class="section">
-            <h1>About us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
-        </div>
+        <div class="footer-container">
 
-        <div class="section">
-            <h1>Links maybe?</h1><br><br>
-            <a href="" style="font-size: 12px;">Blah </a><br>
-            <a href="" style="font-size: 12px;">Blah blah</a><br>
-            <a href="" style="font-size: 12px;">Blah blah blah</a>
-        </div>
-        
-        <div class="section">
-            <h1>Contact us</h1>
-            <p style="font-size: 12px;">FREDJK<br>
-                1001 Observatory Rd, Observatory, South Africa, 7925<br>
-                Cape Town, South Africa<br>
-                enquries@fredjk.com
-            </p>
-        </div>
-    </div><br>
+            <div class="section">
+                <h1>About us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?  </p>
+            </div>
 
-    <img src="" alt="Social media logo" class="logo">
-    <img src="" alt="Social media logo" class="logo">
-    <img src="" alt="Social media logo" class="logo">
-    <img src="" alt="Social media logo" class="logo">
-  
-    <br><br>
-   
-    <a>&copy; All content FREDJK 2024.</a>
+            <div class="section">
+                <h1>Links maybe?</h1><br><br>
+                <a href="" style="font-size: 12px;">Blah </a><br>
+                <a href="" style="font-size: 12px;">Blah blah</a><br>
+                <a href="" style="font-size: 12px;">Blah blah blah</a>
+            </div>
+            
+            <div class="section">
+                <h1>Contact us</h1>
+                <p style="font-size: 12px;">FREDJK<br>
+                    1001 Observatory Rd, Observatory, South Africa, 7925<br>
+                    Cape Town, South Africa<br>
+                    enquries@fredjk.com
+                </p>
+            </div>
+        </div><br>
 
-</footer>
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+      
+        <br><br>
+       
+        <a>&copy; All content FREDJK 2024.</a>
+
+    </footer>
+
 </body>
 </html>

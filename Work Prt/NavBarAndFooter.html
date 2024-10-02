@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Footer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
+        }
+
+        .logo-container {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        .site-name {
+            font-size: 1.5em;
+            margin-right: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search {
+            display: none;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        #searchBtn {
+            padding: 5px 10px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .search-container.active #search {
+            display: inline-block;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #575757;
+        }
+
+        .navbar.active {
+            opacity: 0.5;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer h1 {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .section {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .section p {
+            text-align: justify;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="path/to/your/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="site-name">YourVote+</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <a href="#login" class="dropbtn">Login</a>
+                <div class="dropdown-content">
+                    <a href="#admin">Admin</a>
+                    <a href="Login.html">Voter</a>
+                    <a href="RegistrationForm.html">Register</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#voting-portal" class="dropbtn">Voting Portal</a>
+                <div class="dropdown-content">
+                    <a href="#manifesto">Manifesto</a>
+                    <a href="Ballot.html">Ballots</a>
+                    <a href="#results">Results</a>
+                </div>
+            </div>
+            <a href="#contact">Contacts</a>
+            <a href="#about">About us</a>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Main content goes here -->
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="section" id="about">
+                <h1>About us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus rem veritatis a magni. Ducimus voluptates delectus eveniet accusantium sunt quis consequuntur minus? Dolorum quidem eos ut minus doloribus nihil?</p>
+            </div>
+            <div class="section">
+                <h1>Links maybe?</h1><br><br>
+                <a href="" style="font-size: 12px;">Blah</a><br>
+                <a href="" style="font-size: 12px;">Blah blah</a><br>
+                <a href="" style="font-size: 12px;">Blah blah blah</a>
+            </div>
+            <div class="section" id="contact">
+                <h1>Contact us</h1>
+                <p style="font-size: 12px;">FREDJK<br>
+                    1001 Observatory Rd, Observatory, South Africa, 7925<br>
+                    Cape Town, South Africa<br>
+                    enquries@fredjk.com
+                </p>
+            </div>
+        </div><br>
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <img src="" alt="Social media logo" class="logo">
+        <br><br>
+        <a>&copy; All content FREDJK 2024.</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('search');
+            const navbar = document.querySelector('.navbar');
+
+            searchBtn.addEventListener('click', function() {
+                if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+                    searchInput.style.display = 'inline-block';
+                    navbar.classList.add('active');
+                } else {
+                    searchInput.style.display = 'none';
+                    navbar.classList.remove('active');
+                }
+            });
+
+            searchInput.addEventListener('input', function() {
+                const query = searchInput.value.toLowerCase();
+                const content = document.body.innerText.toLowerCase();
+                if (content.includes(query)) {
+                    alert('Search results found.');
+                } else {
+                    alert('No results found.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
